@@ -26,9 +26,9 @@ rm -rf Microsoft365_E5_Renew_X.zip
 
 if [ -f /usr/local/bin/starte5renewx ]
 then 
-    sudo rm -rf /usr/local/bin/starte5renewx
+    echo
 else
     sudo echo "export DOTNET_ROOT=$HOME/dotnet &&export PATH=$PATH:$HOME/dotnet && cd $HOME/renewx && dotnet Microsoft365_E5_Renew_X.dll || exit 1" >/usr/local/bin/starte5renewx
-    chmod 755 /usr/local/bin/starte5renewx
+    sudo chmod 755 /usr/local/bin/starte5renewx
 fi
 echo Installation Complete! run"starte5renewx" to start e5renewx.
