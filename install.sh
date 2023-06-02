@@ -1,4 +1,5 @@
 #!/bin/bash
+set +e
 if [ -f /usr/bin/apt-get ]
 then
     sudo apt update
