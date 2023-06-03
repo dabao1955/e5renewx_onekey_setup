@@ -1,9 +1,9 @@
 #!/bin/bash
-set +e
+set -eux
 if [ -f /usr/bin/apt-get ]
 then
     sudo apt update
-    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl1.1 libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
+    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl* libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
 else
     echo only support debian system! ; exit 1
 fi
