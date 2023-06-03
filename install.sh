@@ -55,7 +55,7 @@ then
 else
     sudo touch /usr/local/bin/starte5renewx
     sudo chmod 777 -R /usr/local/bin/*
-    sudo echo "cd $HOME/renewx && sudo $HONE/dotnet/dotnet Microsoft365_E5_Renew_X.dll || exit 1" > /usr/local/bin/starte5renewx
+    sudo echo "cd $HOME/renewx && sudo $HOME/dotnet/dotnet Microsoft365_E5_Renew_X.dll || exit 1" > /usr/local/bin/starte5renewx
     sudo chmod 777 /usr/local/bin/starte5renewx
 fi
 echo Installation Complete! run /usr/local/bin/starte5renewx to start e5renewx.
