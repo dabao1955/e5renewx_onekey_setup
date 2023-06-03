@@ -29,6 +29,7 @@ if [ -f /usr/local/bin/starte5renewx ]
 then 
     echo
 else
+    sudo touch /usr/local/bin/starte5renewx
     sudo chmod 755 -R /usr/local/bin
     sudo echo "export DOTNET_ROOT=$HOME/dotnet &&export PATH=$PATH:$HOME/dotnet && cd $HOME/renewx && sudo dotnet Microsoft365_E5_Renew_X.dll || exit 1" >/usr/local/bin/starte5renewx
     sudo chmod 755 /usr/local/bin/starte5renewx
