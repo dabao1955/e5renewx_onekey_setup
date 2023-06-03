@@ -1,6 +1,10 @@
 #!/bin/bash
 set -eux
-echo start job
+
+echo This shell script will install e5renewx on your linxu system.
+read -s -n1 -p "press anykey to continue ... "
+echo starting installation...
+
 if [ -f /usr/bin/apt-get ]
 then
     echo step 1/4 : update software sources
