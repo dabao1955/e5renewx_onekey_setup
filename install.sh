@@ -14,26 +14,29 @@ else
     echo only support debian system! ; exit 1
 fi
 
-echo step 2/4 : install dotnet
 get_arch=`arch`
 if [ -d $HOME/dotnet*.tar.gz ];then
     echo 
+else if [ -d $HOME/dotnet ];then
+echo 
 else if [[ $get_arch =~ "x86_64" ]];then
+    echo step 2/4 : install dotnet
     wget https://download.visualstudio.microsoft.com/download/pr/e89c4f00-5cbb-4810-897d-f5300165ee60/027ace0fdcfb834ae0a13469f0b1a4c8/dotnet-sdk-3.1.426-linux-x64.tar.gz
+    mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
 elif [[ $get_arch =~ "aarch64" ]];then
+    echo step 2/4 : install dotnet
     wget https://download.visualstudio.microsoft.com/download/pr/79f1cf3e-ccc7-4de4-9f4c-1a6e061cb867/68cab78b3f9a5a8ce2f275b983204376/dotnet-sdk-3.1.426-linux-arm64.tar.gz
+    mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
 elif [[ $get_arch =~ "armhf" ]];then
+    echo step 2/4 : install dotnet
     wget https://download.visualstudio.microsoft.com/download/pr/2043e641-977d-43ac-b42a-f47fd9ee79ba/5b10d12a0626adaed720358ab8ad0b7e/dotnet-sdk-3.1.426-linux-arm.tar.gz
+    mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
 else
     echo "unsupported architecture!!" ; exit 1
 fi
 fi
-rm -rf dotnet*.tar.gz
-if [ -d $HOME/dotnet ];then
-echo 
-else
-    mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
 fi
+rm -rf dotnet*.tar.gz
 
 if [ -d $HOME/renewx ];then
     echo
@@ -55,4 +58,4 @@ else
     sudo echo "export DOTNET_ROOT=$HOME/dotnet &&export PATH=$PATH:$HOME/dotnet && cd $HOME/renewx && sudo dotnet Microsoft365_E5_Renew_X.dll || exit 1" > /usr/local/bin/starte5renewx
     sudo chmod 777 /usr/local/bin/starte5renewx
 fi
-echo Installation Complete! run <starte5renewx> to start e5renewx.
+echo Installation Complete! run /usr/local/bin/starte5renewx to start e5renewx.
