@@ -5,6 +5,7 @@ get_arch=`arch`
 
 echo This shell script will install e5renewx on your linxu system.
 read -s -n1 -p "press anykey to continue ... "
+echo
 echo starting installation...
 
 if [ -f /usr/bin/apt-get ]
