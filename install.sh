@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+get_arch=`arch`
+
 echo This shell script will install e5renewx on your linxu system.
 read -s -n1 -p "press anykey to continue ... "
 echo starting installation...
@@ -9,12 +11,12 @@ if [ -f /usr/bin/apt-get ]
 then
     echo step 1/4 : update software sources
     sudo apt update
-    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl1.0-dev libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
+    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl*:$get_arch libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
 else
     echo only support debian system! ; exit 1
 fi
 
-get_arch=`arch`
+
 if [ -d $HOME/dotnet*.tar.gz ];then
     echo 
 else if [ -d $HOME/dotnet ];then
