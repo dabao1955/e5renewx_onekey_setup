@@ -12,7 +12,7 @@ if [ -f /usr/bin/apt-get ]
 then
     echo step 1/4 : update software sources
     sudo apt update
-    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl*:$get_arch libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
+    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl-dev libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
 else
     echo only support debian system! ; exit 1
 fi
