@@ -9,7 +9,7 @@ if [ -f /usr/bin/apt-get ]
 then
     echo step 1/4 : update software sources
     sudo apt update
-    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl* libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
+    sudo apt install libc6 libgcc-s1 libgssapi-krb5-2 libssl1.0-dev libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
 else
     echo only support debian system! ; exit 1
 fi
@@ -42,9 +42,9 @@ if [ -d $HOME/renewx ];then
     echo
 else
     echo step 3/4 : install e5renewx
-    wget https://download.saika2077.repl.co/d/Guest/Microsoft365_E5_Renew_X.zip
-    unzip Microsoft365_E5_Renew_X.zip -d $HOME/renewx
-    rm -rf Microsoft365_E5_Renew_X.zip
+    wget https://github.com/dabao1955/e5renewx_onekey_setup/releases/download/archive/renewx.zip
+    unzip renewx.zip -d $HOME/renewx
+    rm -rf renewx.zip
 fi
 
 echo step 4/4 : finish job
