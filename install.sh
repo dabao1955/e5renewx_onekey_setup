@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eu
 
-get_arch=`arch`
+get_arch=$(arch)
 
-echo This shell script will install e5renewx on your linxu system.
+echo This shell script will install e5renewx on your linux system.
 read -s -n1 -p "press anykey to continue ... "
 echo
 echo starting installation...
@@ -17,12 +17,13 @@ else
     echo only support debian system! ; exit 1
 fi
 
-
-if [ -d $HOME/dotnet*.tar.gz ];then
+for dotnet in $HOME/dotnet*.tar.gz
+do
+if [ -d $dotnet ];then
     echo 
-else if [ -d $HOME/dotnet ];then
+elif [ -d $HOME/dotnet ];then
 echo 
-else if [[ $get_arch =~ "x86_64" ]];then
+elif [[ $get_arch =~ "x86_64" ]];then
     echo step 2/4 : install dotnet
     wget https://download.visualstudio.microsoft.com/download/pr/e89c4f00-5cbb-4810-897d-f5300165ee60/027ace0fdcfb834ae0a13469f0b1a4c8/dotnet-sdk-3.1.426-linux-x64.tar.gz
     mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
@@ -37,8 +38,8 @@ elif [[ $get_arch =~ "armhf" ]];then
 else
     echo "unsupported architecture!!" ; exit 1
 fi
-fi
-fi
+done
+
 rm -rf dotnet*.tar.gz
 
 if [ -d $HOME/renewx ];then
