@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eu
 
-get_arch="arch"
+get_arch=$(arch)
 
-echo This shell script will install e5renewx on your linxu system.
+echo This shell script will install e5renewx on your linux system.
 read -s -n1 -p "press anykey to continue ... "
 echo
 echo starting installation...
@@ -37,8 +37,6 @@ elif [[ $get_arch =~ "armhf" ]];then
     mkdir -p $HOME/dotnet && tar zxf dotnet*.tar.gz -C $HOME/dotnet
 else
     echo "unsupported architecture!!" ; exit 1
-fi
-fi
 fi
 done
 
