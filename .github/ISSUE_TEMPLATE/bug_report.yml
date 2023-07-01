@@ -1,0 +1,104 @@
+name: Bug Report
+description: "Create a report to help us improve."
+title: "[BUG]"
+labels: "bug"
+assignees: tiann
+body:
+  - type: markdown
+    id: enviroment-info
+    attributes:
+      value: "## Enviroment Infomation"
+  - type: input
+    id: device
+    validations:
+      required: false
+    attributes:
+      label: "Device name"
+      description: "Press your device name."
+      placeholder: "Google Pixel 6"
+  - type: input
+    id: ksu-version
+    validations:
+      required: false
+    attributes:
+      label: "KernelSU version"
+      description: "Open KernelSU App,Check out the KernelSU version in the middle."
+      placeholder: "10800"
+  - type: input
+    id: app-version
+    validations:
+      required: false
+    attributes:
+      label: "KernelSU App version"
+      description: "Press and hold the KernelSU app to view the version of the manager in the application version."
+      placeholder: "0.5.7"
+  - type: input
+    id: kernel-version
+    validations:
+      required: false
+    attributes:
+      label: "Kernel version"
+      description: "Open the phone settings, click on the phone option, find the kernel version."
+      placeholder: "5.10.272"
+  - type: input
+    id: android-version
+    validations:
+      required: false
+    attributes:
+      label: "Android version"
+      description: "Android version of the device running KernelSU."
+      placeholder: "Android 12"
+  - type: markdown
+    id: detail-info
+    attributes:
+      value: "## Detail Infomation"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: "Description of the problem."
+      description: "Briefly describe the problem you are experiencing,Describe the bug ."
+      placeholder: "A clear and concise description of what the bug is."
+    validations:
+      required: true
+  - type: textarea
+    id: how-happened
+    attributes:
+      label: "Steps to reproduce"
+      description: "If the action can reproduce the problem."
+      placeholder: "1.Go to '...' \
+      
+                    2.Click on '....' \
+                    
+                    3.Scroll down to '....' \
+                    
+                    4.See error"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected correct result"
+      placeholder: "A clear and concise description of what you expected to happen."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Related log output"
+      description: "Use the Export Log function in KernelSU App."
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: "Additional Information"
+      description: "If you have other information to provide, you can fill it in here (you can provide screenshots, videos, etc.)."
+      placeholder: "Add any other context about the problem here."
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Exclude problems caused by installing modules.
+      description: "Please make sure that no modules are installed before submitting the issue, because the developer cannot guarantee whether the problem occurs due to the installation of modules."
+      options:
+        - label: "I removed all modules and still have this problem."
+          required: true
