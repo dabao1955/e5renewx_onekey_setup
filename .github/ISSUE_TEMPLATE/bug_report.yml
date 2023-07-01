@@ -81,13 +81,15 @@ body:
       placeholder: "A clear and concise description of what you expected to happen."
     validations:
       required: true
-  - type: textarea
-    id: logs
+  - type: file
+    id: log-file
     attributes:
-      label: "Related log output"
-      description: "Use the Export Log function in KernelSU App."
+      label: 错误日志文件
+      description: 请上传您的错误日志文件作为附件。
+      render: shell
     validations:
       required: true
+
   - type: textarea
     id: additional-info
     attributes:
