@@ -86,7 +86,6 @@ body:
     attributes:
       label: 错误日志文件
       description: 请上传您的错误日志文件作为附件。
-      render: shell
     validations:
       required: true
 
