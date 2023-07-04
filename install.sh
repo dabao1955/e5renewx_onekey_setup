@@ -4,7 +4,7 @@ set -eu
 get_arch=$(arch)
 
 echo This shell script will install e5renewx on your linux system.
-read -s -n1 -p "press anykey to continue ... "
+read -s -n1 -p "press any key to continue ... "
 echo
 echo starting installation...
 
@@ -55,7 +55,7 @@ echo step 4/4 : finish job
 
 if [ -f /usr/local/bin/starte5renewx ]
 then 
-    echo
+    echo "Nothing to do."
 else
     sudo touch /usr/local/bin/starte5renewx
     sudo chmod 777 -R /usr/local/bin/*
