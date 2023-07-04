@@ -3,7 +3,7 @@
 set -eux
 
 echo This shell script will install e5renewx on your linxu system.
-read -s -n1 -p "press anykey to continue ... "
+read -s -n1 -p "press any key to continue ... "
 echo Starting job...
 
 sudo rm -rf $HOME/dotnet
