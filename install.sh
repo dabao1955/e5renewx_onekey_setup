@@ -18,11 +18,11 @@ function Install_Deps() {
     if [ -f /usr/bin/apt-get ]; then
         echo step 1/4 : update software sources
         apt-get update
-        apt-get install libc6 libgcc-s1 libgssapi-krb5-2 libssl-dev libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget openssl-devel libicu-devel -y
+        apt-get install libc6 libgcc-s1 libgssapi-krb5-2 libssl-dev libstdc++6 zlib1g libgdiplus tar xz-utils zip unzip wget -y
 #    elif [ -f /usr/bin/dnf ]; then
 #        echo step 1/4 : update software sources
 #        dnf update
-#        dnf install -y --skip-broken install libgcc openssl libstdc++ zlib libgdiplus tar xz zip unzip wget libstdc++-devel zlib-devel
+#        dnf install -y --skip-broken install libgcc openssl libstdc++ zlib libgdiplus tar xz zip unzip wget libstdc++-devel zlib-devel openssl-devel libicu-devel
     else
         echo only support debian and debian-based linux. ; exit 127
     fi
