@@ -1,13 +1,14 @@
 #!/bin/bash
+# shellcheck disable=SC2162
 
-set -eux
+set -e
 
 echo This shell script will install e5renewx on your linxu system.
 read -s -n1 -p "press any key to continue ... "
 echo Starting job...
 
-sudo rm -rf $HOME/dotnet
-sudo rm -rf $HOME/renewx
-sudo rm -rf /usr/local/bin/starte5renewx
+rm -rf "$HOME"/dotnet
+rm -rf "$HOME"/renewx
+rm -rf /usr/local/bin/starte5renewx
 
 echo Uninstallation Complete!
